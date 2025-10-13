@@ -1,0 +1,4 @@
+helm:
+  repoURL: https://crowdsecurity.github.io/helm-charts
+  chart: helloworld
+  targetRevision: 0.2.1

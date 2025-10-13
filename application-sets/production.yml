@@ -1,0 +1,66 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: homelab-manifests-production-appset
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+    repoURL: https://github.com/steffkelsey/homelab-live.git
+    revision: HEAD
+    directories:
+    - path: manifests/*
+  template:    
+  metadata:
+    name: '{{ .path.basename }}'   
+  spec:
+    project: default
+    source:
+      repoURL: https://github.com/steffkelsey/homelab-live.git
+      targetRevision: HEAD
+      path: '{{ .path.path }}'
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: '{{ .path.basename }}'
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: homelab-apps-production-appset
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+    repoURL: https://github.com/steffkelsey/homelab-live.git
+    revision: HEAD
+    files:
+    - path: apps/*/config.yml
+  template:    
+  metadata:
+    name: '{{ .path.basename }}'   
+  spec:
+    project: default
+    sources:
+    - repoURL: '{{ .helm.repoURL }}'
+      chart: '{{ .helm.chart }}'
+      targetRevision: '{{ .helm.targetRevision }}'
+      helm:
+        valueFiles:
+          - '$valuesRepo/apps/{{ .path.basename }}/values.yaml'
+    - repoURL: 'https://github.com/steffkelsey/homelab-live.git'
+      targetRevision: HEAD
+      ref: valuesRepo
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: '{{ .path.basename }}'
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
