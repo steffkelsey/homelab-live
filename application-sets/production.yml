@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -8,26 +9,29 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-    repoURL: https://github.com/steffkelsey/homelab-live.git
-    revision: HEAD
-    directories:
-    - path: manifests/*
-  template:    
-  metadata:
-    name: '{{ .path.basename }}'   
-  spec:
-    project: default
-    source:
       repoURL: https://github.com/steffkelsey/homelab-live.git
-      targetRevision: HEAD
-      path: '{{ .path.path }}'
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: '{{ .path.basename }}'
-    syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
+      revision: HEAD
+      directories:
+      - path: manifests/*
+  template:    
+    metadata:
+      name: '{{ .path.basename }}'   
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/steffkelsey/homelab-live.git
+        targetRevision: HEAD
+        path: '{{ .path.path }}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{ .path.basename }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -38,29 +42,31 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
-    repoURL: https://github.com/steffkelsey/homelab-live.git
-    revision: HEAD
-    files:
-    - path: apps/*/config.yml
+      repoURL: https://github.com/steffkelsey/homelab-live.git
+      revision: HEAD
+      files:
+      - path: apps/*/config.yml
   template:    
-  metadata:
-    name: '{{ .path.basename }}'   
-  spec:
-    project: default
-    sources:
-    - repoURL: '{{ .helm.repoURL }}'
-      chart: '{{ .helm.chart }}'
-      targetRevision: '{{ .helm.targetRevision }}'
-      helm:
-        valueFiles:
-          - '$valuesRepo/apps/{{ .path.basename }}/values.yaml'
-    - repoURL: 'https://github.com/steffkelsey/homelab-live.git'
-      targetRevision: HEAD
-      ref: valuesRepo
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: '{{ .path.basename }}'
-    syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
+    metadata:
+      name: '{{ .path.basename }}'   
+    spec:
+      project: default
+      sources:
+      - repoURL: '{{ .helm.repoURL }}'
+        chart: '{{ .helm.chart }}'
+        targetRevision: '{{ .helm.targetRevision }}'
+        helm:
+          valueFiles:
+            - '$valuesRepo/apps/{{ .path.basename }}/values.yaml'
+      - repoURL: 'https://github.com/steffkelsey/homelab-live.git'
+        targetRevision: HEAD
+        ref: valuesRepo
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{ .path.basename }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
