@@ -28,3 +28,4 @@ spec:
     logs:
       access:
         enabled: true
+        format: json
