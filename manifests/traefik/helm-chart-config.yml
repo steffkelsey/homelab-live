@@ -21,7 +21,7 @@ spec:
       dashboard:
         enabled: true
         matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
-        entryPoints: ["web"]
+        entryPoints: ["websecure"]
     logs:
       access:
         enabled: true
