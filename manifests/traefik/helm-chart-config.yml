@@ -24,4 +24,4 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
-        matchRule: Host(`intance-2.marlin-daggertooth.ts.net`)
+        matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
