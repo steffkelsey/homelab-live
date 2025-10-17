@@ -16,11 +16,12 @@ spec:
       - "--certificatesresolvers.myresolver.acme.caServer=https://acme-v02.api.letsencrypt.org/directory"
     ports:
       traefik:
-        expose: true
+        default:
+          expose: true
     providers:
       kubernetesCRD:
         allowCrossNamespace: true
     ingressRoute:
       dashboard:
         enabled: true
-        matchRule: Host(`traefik.local`)
+        matchRule: Host(`*.marlin-daggertooth.ts.net`)
