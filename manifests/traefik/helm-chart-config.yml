@@ -25,3 +25,6 @@ spec:
       dashboard:
         enabled: true
         matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
+    logs:
+      access:
+        enabled: true
