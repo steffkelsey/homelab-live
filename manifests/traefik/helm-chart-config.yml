@@ -14,10 +14,6 @@ spec:
       - "--certificatesresolvers.myresolver.acme.storage=/data/acme.json"
       - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
       - "--certificatesresolvers.myresolver.acme.caServer=https://acme-v02.api.letsencrypt.org/directory"
-    ports:
-      traefik:
-        default:
-          expose: true
     providers:
       kubernetesCRD:
         allowCrossNamespace: true
