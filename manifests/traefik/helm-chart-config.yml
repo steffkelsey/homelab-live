@@ -18,6 +18,8 @@ spec:
         enabled: true
         matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
         entryPoints: ["websecure"]
+        tls:
+          certResolver: myresolver
     logs:
       access:
         enabled: true
