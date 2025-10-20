@@ -45,7 +45,7 @@ spec:
       repoURL: https://github.com/steffkelsey/homelab-live.git
       revision: HEAD
       files:
-      - path: apps/*/config.yml
+      - path: apps/*/config.yaml
   template:    
     metadata:
       name: '{{ .path.basename }}'   
