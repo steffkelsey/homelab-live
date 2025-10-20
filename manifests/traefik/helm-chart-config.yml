@@ -8,7 +8,6 @@ spec:
     additionalArguments:
       - "--api"
       - "--api.dashboard=true"
-      - "--api.insecure=true"
       - "--log.level=DEBUG"
     providers:
       kubernetesCRD:
@@ -19,16 +18,17 @@ spec:
         matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
         entryPoints: ["websecure"]
         tls:
-          certResolver: myresolver
+          certResolver: tailscaleresolver
     logs:
       access:
         enabled: true
         format: json
     certificatesResolvers:
-      myresolver:
+      acmeresolver:
         acme:
           email: thecodeviking@gmail.com
           storage: /data/acme.json
           tlsChallenge: true
           caServer: "https://acme-v02.api.letsencrypt.org/directory"
+      tailscaleresolver:
         tailscale: {}
