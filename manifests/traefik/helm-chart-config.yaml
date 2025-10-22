@@ -31,5 +31,5 @@ spec:
           storage: /data/acme.json
           tlsChallenge: true
           caServer: "https://acme-v02.api.letsencrypt.org/directory"
-      tailscaleresolver:
-        tailscale: {}
+      #tailscaleresolver:
+      #  tailscale: {}
