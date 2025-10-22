@@ -7,7 +7,7 @@ spec:
   valuesContent: |-
     additionalArguments:
       - "--api"
-      - "--api.insecure=true"
+      #- "--api.insecure=true"
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
     providers:
@@ -16,14 +16,10 @@ spec:
     ingressRoute:
       dashboard:
         enabled: false
-        #matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
-        #entryPoints: ["websecure"]
-        #tls:
-        #  certResolver: tailscaleresolver
-    logs:
-      access:
-        enabled: true
-        format: json
+    #logs:
+    #  access:
+    #    enabled: true
+    #    format: json
     certificatesResolvers:
       acmeresolver:
         acme:
@@ -31,5 +27,3 @@ spec:
           storage: /data/acme.json
           tlsChallenge: true
           caServer: "https://acme-v02.api.letsencrypt.org/directory"
-      #tailscaleresolver:
-      #  tailscale: {}
