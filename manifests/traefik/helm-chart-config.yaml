@@ -7,6 +7,7 @@ spec:
   valuesContent: |-
     additionalArguments:
       - "--api"
+      - "--api.insecure=true"
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
     providers:
