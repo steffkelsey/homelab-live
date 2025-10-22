@@ -15,8 +15,8 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
-        annotations: {}
-          #kubernetes.io/ingress.class: tailscale
+        annotations:
+          kubernetes.io/ingress.class: tailscale
         matchRule: Host(`instance-2.marlin-daggertooth.ts.net`)
         entryPoints: ["websecure"]
         tls:
