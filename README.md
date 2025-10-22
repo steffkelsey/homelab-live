@@ -6,7 +6,8 @@ Software running on my homelab #gitops #argocd #applicationsets
 2. crowdsec for DOS protection
 3. linkerd for encryption in transit
 4. traefik customizations (TLS etc)
-5. expose admin services (argocd, kubernetes console, etc) via tailnet with magicDNS and Tailscale certificate for TLS
+5. akri for USB storage access in k8s
+6. expose admin services (argocd, kubernetes-dashboard, traefik, etc) via tailnet with magicDNS and Tailscale certificate for TLS
 
 
 ## A BIG PROBLEM TO SOLVE
