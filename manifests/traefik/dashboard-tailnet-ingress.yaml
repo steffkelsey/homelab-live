@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-admin-ingress
+  namespace: kube-system
+spec:
+  ingressClassName: tailscale
+  rules:
+  - host: traefik
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: traefik-admin
+            port:
+              number: 8080
+  tls:
+  - hosts:
+    - traefik

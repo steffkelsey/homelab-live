@@ -7,7 +7,6 @@ spec:
   valuesContent: |-
     additionalArguments:
       - "--api"
-      #- "--api.insecure=true"
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
     providers:
@@ -18,10 +17,6 @@ spec:
         enabled: true
         matchRule: Host(`traefik.marlin-daggertooth.ts.net`)
         entryPoints: ["web"]
-    #logs:
-    #  access:
-    #    enabled: true
-    #    format: json
     certificatesResolvers:
       acmeresolver:
         acme:
