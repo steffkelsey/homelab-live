@@ -15,7 +15,7 @@ spec:
           service:
             name: traefik-dashboard
             port:
-              number: traefik-port
+              name: traefik-port
   tls:
   - hosts:
     - traefik
