@@ -8,8 +8,8 @@ spec:
     app.kubernetes.io/instance: traefik-kube-system
     app.kubernetes.io/name: traefik
   ports:
-    - name: traefik
+    - name: traefik-port
       protocol: TCP
       port: 8080
-      targetPort: web
+      targetPort: traefik
   type: NodePort
