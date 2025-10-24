@@ -15,7 +15,6 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
-        matchRule: Host(`traefik.marlin-daggertooth.ts.net`)
         entryPoints: ["traefik"]
     certificatesResolvers:
       acmeresolver:
@@ -24,3 +23,8 @@ spec:
           storage: /data/acme.json
           tlsChallenge: true
           caServer: "https://acme-v02.api.letsencrypt.org/directory"
+  valuesSecrets:
+    - name: traefik-tailscale-config
+      ignoreUpdates: false
+      keys:
+        - configValues
