@@ -1,4 +1,0 @@
-helm:
-  repoURL: https://project-akri.github.io/akri/
-  chart: akri
-  targetRevision: 0.13.8
