@@ -1,0 +1,7 @@
+app:
+  ingress:
+    enabled: true
+    hosts:
+      - kubernetes-dashboard
+    ingressClassName: tailscale
+    useDefaultAnnotations: false
