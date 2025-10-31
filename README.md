@@ -6,19 +6,6 @@ Software running on my homelab #gitops #argocd #applicationsets
 2. crowdsec for DOS protection
 3. linkerd for encryption in transit
 4. traefik customizations (TLS etc)
-5. akri for USB storage access in k8s
-6. expose admin services (argocd, kubernetes-dashboard, traefik, etc) via tailnet with magicDNS and Tailscale certificate for TLS
-
-
-## A BIG PROBLEM TO SOLVE
-
-- Most Applications are Helm charts from remote repositories with values files 
-stored in this repo (multiple sources)  
-- Some Applications are Kubernetes manifests. For example, patching Traefik config  
-
-SOLUTIONS:
-1. make the traefik config (and any that are just manifests) come from it's own 
-Helm chart and then everything is the same  
-2. always use a template patch and handle the logic in the patch for multiple
-sources   
+5. expose admin services (argocd, kubernetes-dashboard, traefik, etc) via tailnet with magicDNS and Tailscale certificate for TLS
+6. have a volume mount for USB drive for the media files for jellyfin
 
