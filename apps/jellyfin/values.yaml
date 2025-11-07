@@ -1,0 +1,30 @@
+service:
+  type: ClusterIP
+ingress:
+  enabled: true
+  className: traefik
+  annotations: 
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls.certresolver: acmeresolver
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-stripprefix-middleware@kubernetescrd
+  hosts:
+    - host: yelpyourself.com
+      paths:
+        - path: /jellyfin
+          pathType: ImplementationSpecific
+  tls:
+    - hosts:
+      - yelpyourself.com
+persistence:
+  config:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    storageClass: 'nfs-jellyfin-config'
+  media:
+    enabled: true
+    type: pvc
+    accessMode: ReadWriteOnce
+    size: 1Ti
+    storageClass: 'nfs-jellyfin-data'

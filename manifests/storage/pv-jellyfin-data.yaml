@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-static-jellyfin-data
+spec:
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /data
+    server: <TBD full service name for internal NFS server>
+    readOnly: false
+  storageClassName: nfs-jellyfin-data

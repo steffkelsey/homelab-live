@@ -1,0 +1,4 @@
+helm:
+  repoURL: https://jellyfin.github.io/jellyfin-helm
+  chart: jellyfin
+  targetRevision: 2.5.0

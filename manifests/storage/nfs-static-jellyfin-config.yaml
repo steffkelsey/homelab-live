@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-jellyfin-config
+provisioner: example.com/nfs-static # A dummy provisioner for use by static pV
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
