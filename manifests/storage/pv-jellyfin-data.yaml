@@ -10,6 +10,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     path: /data
-    server: <TBD full service name for internal NFS server>
+    server: nfs-server.nfs-server-nfs-server-provisioner.svc.cluster.local
     readOnly: false
   storageClassName: nfs-jellyfin-data
