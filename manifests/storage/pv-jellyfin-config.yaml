@@ -10,6 +10,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     path: /config
-    server: nfs-server.nfs-server-nfs-server-provisioner.svc.cluster.local
+    server: cluster.local/nfs-server-nfs-server-provisioner
     readOnly: false
   storageClassName: nfs-jellyfin-config
