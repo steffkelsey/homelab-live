@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    path: /data
+    path: "/data/"
     server: 10.43.0.11
     readOnly: false
   storageClassName: nfs-jellyfin-data
