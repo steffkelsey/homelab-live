@@ -18,12 +18,12 @@ ingress:
       - yelpyourself.com
 persistence:
   config:
-    enabled: true
+    enabled: false
     accessMode: ReadWriteOnce
     size: 1Gi
     storageClass: 'nfs-jellyfin-config'
   media:
-    enabled: true
+    enabled: false
     type: pvc
     accessMode: ReadWriteOnce
     size: 1Ti
