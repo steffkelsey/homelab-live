@@ -6,7 +6,7 @@ spec:
   capacity:
     storage: 1Ti
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
     path: /data
