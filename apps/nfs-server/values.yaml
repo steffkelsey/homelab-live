@@ -1,5 +1,5 @@
 service:
-  clusterIP: 10.43.0.1 # use a static IP because k8s DNS does NOT work for this service
+  clusterIP: 10.43.0.11 # use a static IP because k8s DNS does NOT work for this service
 
 persistence:
   enabled: true
