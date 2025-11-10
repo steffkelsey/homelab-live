@@ -4,4 +4,4 @@ metadata:
   name: nfs-jellyfin-config
 provisioner: kubernetes.io/no-provisioner
 reclaimPolicy: Retain
-volumeBindingMode: Immediate
+volumeBindingMode: WaitForFirstConsumer
