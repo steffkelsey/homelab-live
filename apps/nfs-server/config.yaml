@@ -1,4 +1,0 @@
-helm:
-  repoURL: https://kubernetes-sigs.github.io/nfs-ganesha-server-and-external-provisioner/
-  chart: nfs-server-provisioner
-  targetRevision: 1.8.0
