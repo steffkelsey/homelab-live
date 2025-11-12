@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    path: "/data/"
+    path: "/mnt/usb/data"
     server: 192.168.68.71
     readOnly: false
   storageClassName: nfs-jellyfin-data
