@@ -11,7 +11,7 @@ ingress:
   hosts:
     - host: yelpyourself.com
       paths:
-        - path: /jellyfin
+        - path: /
           pathType: ImplementationSpecific
   tls:
     - hosts:
