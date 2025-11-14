@@ -19,12 +19,12 @@ ingress:
 persistence:
   config:
     enabled: true
-    accessMode: ReadWriteOnce
+    accessMode: ReadWriteMany
     size: 1Gi
-    storageClass: 'nfs-jellyfin-config'
+    storageClass: 'jellyfin-config-sc'
   media:
     enabled: true
     type: pvc
-    accessMode: ReadWriteOnce
+    accessMode: ReadWriteMany
     size: 1Ti
-    storageClass: 'nfs-jellyfin-data'
+    storageClass: 'jellyfin-data-sc'
