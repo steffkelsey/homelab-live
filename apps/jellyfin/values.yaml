@@ -8,6 +8,7 @@ ingress:
     traefik.ingress.kubernetes.io/router.tls.certresolver: acmeresolver
     traefik.ingress.kubernetes.io/router.tls: "true"
     traefik.ingress.kubernetes.io/router.middlewares: kube-system-stripprefix-middleware@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirect-to-https-middleware@kubernetescrd
   hosts:
     - host: yelpyourself.com
       paths:

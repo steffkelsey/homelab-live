@@ -8,8 +8,7 @@ Software running on my homelab #gitops #argocd #applicationsets
 - [x] traefik customizations (TLS etc)
 - [x] expose admin services (argocd, kubernetes-dashboard, traefik, etc) via tailnet with magicDNS and Tailscale certificate for TLS
 - [x] have a volume mount for USB drive for the media files for jellyfin
-- [ ] NFS server for the jellyfin PVs
-- [ ] PVC for jellyfin to access the NFS PVs
+- [x] PVC for jellyfin to access the NFS PVs
 - [ ] for multinode clusters, deploy Metalb loadbalancer w/ Helm
 - [ ] To encrypt packets between kublets, switch the CNI from flannel to Cilium
 
