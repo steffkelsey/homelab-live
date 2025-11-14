@@ -16,6 +16,13 @@ spec:
       dashboard:
         enabled: true
         entryPoints: ["traefik"]
+    ports:
+      web:
+        redirections:
+          entryPoint:
+            to: websecure
+            scheme: https
+            permanent: true
     certificatesResolvers:
       acmeresolver:
         acme:
