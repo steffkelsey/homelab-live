@@ -19,7 +19,8 @@ spec:
     volumeHandle: 192.168.68.71/mnt/nvme/data
     volumeAttributes:
       server: 192.168.68.71
-      share: /mnt/nvme/data
+      share: /mnt/nvme
+      path: /data
 #  nfs:
 #    path: "/mnt/nvme/data"
 #    server: 192.168.68.71
