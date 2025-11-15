@@ -19,13 +19,11 @@ ingress:
 persistence:
   config:
     enabled: true
-    #existingClaim: 'jellyfin-config-nvme'
     accessMode: ReadWriteMany
     size: 1Gi
     storageClass: 'jellyfin-config-sc'
   media:
     enabled: true
-    existingClaim: 'jellyfin-data-nvme'
     type: pvc
     accessMode: ReadWriteMany
     size: 1Ti
