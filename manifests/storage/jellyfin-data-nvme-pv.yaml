@@ -16,11 +16,10 @@ spec:
     driver: nfs.csi.k8s.io
     # volumeHandle format: {nfs-server-address}#{sub-dir-name}#{share-name}
     # make sure this value is unique for every share in the cluster
-    volumeHandle: 192.168.68.71/mnt/nvme/data
+    volumeHandle: jellyfin-data-nvme-pv
     volumeAttributes:
       server: 192.168.68.71
-      share: /mnt/nvme
-      path: /data
+      share: /mnt/nvme/data
 #  nfs:
 #    path: "/mnt/nvme/data"
 #    server: 192.168.68.71
