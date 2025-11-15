@@ -11,6 +11,7 @@ Software running on my homelab #gitops #argocd #applicationsets
 - [x] PVC for jellyfin to access the NFS PVs
 - [ ] for multinode clusters, deploy Metalb loadbalancer w/ Helm
 - [ ] To encrypt packets between kublets, switch the CNI from flannel to Cilium
+- [ ] Put up SSO server (Ory Suite or Authelia) for accessing admin services
 
 
 ### K8s-Dashboard login
