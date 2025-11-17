@@ -10,16 +10,6 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
-#  mountOptions:
-#    - nfsvers=4.1
-#  csi:
-#    driver: nfs.csi.k8s.io
-#    # volumeHandle format: {nfs-server-address}#{sub-dir-name}#{share-name}
-#    # make sure this value is unique for every share in the cluster
-#    volumeHandle: jellyfin-data-nvme-pv
-#    volumeAttributes:
-#      server: 192.168.68.71
-#      share: /mnt/nvme/data
   nfs:
     path: "/mnt/nvme/data"
     server: 192.168.68.71

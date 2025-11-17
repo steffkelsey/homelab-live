@@ -25,7 +25,7 @@ persistence:
     storageClass: 'jellyfin-config-sc'
   media:
     enabled: true
-    existingClaim: 'jellyfin-data-nvme'
+    #existingClaim: 'jellyfin-data-nvme'
     type: pvc
     accessMode: ReadWriteMany
     size: 1Ti
