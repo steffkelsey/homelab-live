@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jellyfin-data
+  name: jellyfin-data-usb
   namespace: jellyfin
 spec:
   accessModes:
