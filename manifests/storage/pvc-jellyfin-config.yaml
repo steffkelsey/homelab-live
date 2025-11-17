@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jellyfin-config-nvme
+  name: jellyfin-config
   namespace: jellyfin
 spec:
   accessModes:
@@ -9,4 +9,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: jellyfin-config-nvme-sc
+  storageClassName: jellyfin-config-sc
