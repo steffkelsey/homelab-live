@@ -22,9 +22,9 @@ affinity:
       nodeSelectorTerms:
       - matchExpressions:
         - key: jellyfin
-        operator: In
-        values:
-        - "enabled"
+          operator: In
+          values:
+          - "enabled"
 persistence:
   config:
     enabled: true
