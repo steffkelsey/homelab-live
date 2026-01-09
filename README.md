@@ -4,12 +4,12 @@ Software running on my homelab #gitops #argocd #applicationsets
 
 - [x] jellyfin for serving media and editing playlists
 - [ ] crowdsec for DOS protection
-- [ ] linkerd for encryption in transit
+- [ ] Cilium service mesh for encryption in transit
 - [x] traefik customizations (TLS etc)
 - [x] expose admin services (argocd, kubernetes-dashboard, traefik, etc) via tailnet with magicDNS and Tailscale certificate for TLS
-- [x] have a volume mount for USB drive for the media files for jellyfin
+- [x] have a volume mount for NFS server for the config & media files for jellyfin
 - [x] PVC for jellyfin to access the NFS PVs
-- [ ] for multinode clusters, deploy Metalb loadbalancer w/ Helm
+- [ ] for multinode clusters, deploy Cilium eBPF L2 loadbalancer w/ Helm
 - [ ] To encrypt packets between kublets, switch the CNI from flannel to Cilium
 - [ ] Put up SSO server (Ory Suite or Authelia) for accessing admin services
 
