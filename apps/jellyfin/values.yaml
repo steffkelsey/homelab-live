@@ -1,3 +1,6 @@
+# -- Number of Jellyfin replicas to start. Should be left at 1.
+# UNLESS we are scaling down for maintenance
+replicaCount: 0
 service:
   type: ClusterIP
 ingress:
