@@ -6,6 +6,10 @@ metadata:
 spec:
   valuesContent: |-
     additionalArguments:
+      - "--certificatesresolvers.acmeresolver.acme.dnschallenge=true"
+      - "--certificatesresolvers.acmeresolver.acme.dnschallenge.provider=namedotcom"
+      - "--certificatesresolvers.acmeresolver.acme.email=thecodeviking@gmail.com"
+      - "--certificatesresolvers.acmeresolver.acme.storage=/data/acme.json"
       - "--api"
       - "--api.dashboard=true"
       - "--log.level=DEBUG"
@@ -23,13 +27,20 @@ spec:
             to: websecure
             scheme: https
             permanent: true
-    certificatesResolvers:
-      acmeresolver:
-        acme:
-          email: thecodeviking@gmail.com
-          storage: /data/acme.json
-          tlsChallenge: true
-          caServer: "https://acme-v02.api.letsencrypt.org/directory"
+    env:
+      - name: NAMEDOTCOM_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: namedotcom-api
+            key: username
+      - name: NAMEDOTCOM_API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: namedotcom-api
+            key: token
+    persistence:
+      enabled: true
+      path: /data
   valuesSecrets:
     - name: traefik-tailscale-config
       ignoreUpdates: false
