@@ -28,12 +28,12 @@ spec:
             scheme: https
             permanent: true
     env:
-      - name: NAMEDOTCOM_USERNAME
+      - name: NAMECOM_USERNAME
         valueFrom:
           secretKeyRef:
             name: namedotcom-api
             key: username
-      - name: NAMEDOTCOM_API_TOKEN
+      - name: NAMECOM_API_TOKEN
         valueFrom:
           secretKeyRef:
             name: namedotcom-api
