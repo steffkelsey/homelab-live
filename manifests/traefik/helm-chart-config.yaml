@@ -41,6 +41,10 @@ spec:
     persistence:
       enabled: true
       path: /data
+    service:
+      spec:
+        loadBalancerIP: "192.168.69.0" # Must match the IP in Router Port Forwarding config
+        loadBalancerClass: "io.cilium/l2-announcer"  # Tells K8s Cilium is handling this service
   valuesSecrets:
     - name: traefik-tailscale-config
       ignoreUpdates: false
