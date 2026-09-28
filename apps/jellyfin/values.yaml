@@ -3,6 +3,8 @@
 replicaCount: 1
 service:
   type: ClusterIP
+livenessProbe:
+  timeoutSeconds: 5  # default of 1s was causing restarts when under load
 ingress:
   enabled: true
   className: traefik
