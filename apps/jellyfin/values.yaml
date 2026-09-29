@@ -4,7 +4,10 @@ replicaCount: 1
 service:
   type: ClusterIP
 livenessProbe:
+  periodSeconds: 20 # default of 10s still had failures during DB scans
   timeoutSeconds: 10  # 5s was causing restarts when under load
+  failureThreshold: 5 # up from default of 3
+  initialDelaySeconds: 20 # default of 10 had some failures during deploys
 ingress:
   enabled: true
   className: traefik
