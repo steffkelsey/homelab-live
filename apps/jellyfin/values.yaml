@@ -1,6 +1,8 @@
 # -- Number of Jellyfin replicas to start. Should be left at 1.
 # UNLESS we are scaling down for maintenance
 replicaCount: 1
+image:
+  tag: 10.11.11 # best to go to 10.11.11 before upgrading to 12.2
 service:
   type: ClusterIP
 livenessProbe:
