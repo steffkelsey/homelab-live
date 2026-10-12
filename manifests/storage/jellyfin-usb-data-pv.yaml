@@ -10,7 +10,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   local:
     path: "/mnt/usb/data"
-    readOnly: false
   storageClassName: local-storage
   nodeAffinity:
     required:
