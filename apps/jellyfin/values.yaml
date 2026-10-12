@@ -38,14 +38,14 @@ affinity:
 persistence:
   config:
     enabled: true
-    existingClaim: 'jellyfin-config-usb'
+    existingClaim: 'jellyfin-usb-config-pvc'
     accessMode: ReadWriteMany
-    size: 1Gi
-    storageClass: 'jellyfin-config-sc'
+    size: 5Gi
+    storageClass: 'local-storage'
   media:
     enabled: true
-    existingClaim: 'jellyfin-data-usb'
+    existingClaim: 'jellyfin-usb-data-pvc'
     type: pvc
     accessMode: ReadWriteMany
     size: 1Ti
-    storageClass: 'jellyfin-data-sc'
+    storageClass: 'local-storage'
